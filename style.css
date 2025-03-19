@@ -1,0 +1,290 @@
+/* Grundlegende Variablen für konsistente Farbgebung */
+:root {
+    --primary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #f8f9fa;
+    --text-color: #2c3e50;
+    --heading-color: #1a2a3a;
+    --link-color: #2980b9;
+    --link-hover-color: #e74c3c;
+    --code-bg-color: #f1f2f6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Grundlegendes Styling */
+  body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Responsives Design */
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  }
+  
+  /* Überschriften */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+  
+  /* Paragraphen */
+  p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  
+  /* Links */
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
+  
+  /* Navigationsmenü */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul:first-of-type {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  ul:first-of-type li {
+    margin: 0.5rem;
+  }
+  
+  ul:first-of-type a {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ul:first-of-type a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+  }
+  
+  /* Andere Listen */
+  ul:not(:first-of-type) {
+    padding-left: 2rem;
+    list-style-type: disc;
+  }
+  
+  /* Formeln und mathematische Ausdrücke */
+  .katex-display {
+    margin: 2rem 0;
+    overflow-x: auto;
+    background-color: var(--code-bg-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+  }
+  
+  /* Hervorhebungen */
+  b, strong {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+  
+  /* Grafik-Container - optimierte Größe und kein Leerraum */
+  #plot {
+    width: 100%;
+    height: auto; /* Auto statt fester Höhe */
+    min-height: 400px; /* Mindesthöhe für den Plot */
+    max-height: 500px; /* Maximalhöhe */
+    margin: 1.5rem 0; /* Reduzierter Abstand */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  /* PyScript-spezifische Anpassungen */
+  py-script:empty,
+  py-config:empty {
+    display: none !important;
+  }
+  
+  /* Entfernt leere Container und unsichtbare Elemente */
+  div:empty, 
+  script + div:empty,
+  #plot + div:empty {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+  }
+  
+  /* Entfernt Leerraum nach dem Plot */
+  #plot ~ py-terminal,
+  #plot ~ py-repl {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  
+  /* Verhindert, dass PyScript-Elemente zu viel Platz einnehmen */
+  [id^="py-"], 
+  [class^="py-"] {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Sticky-Navigation beim Scrollen */
+  ul:first-of-type {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Script-Elemente unsichtbar machen, aber funktional lassen */
+  script[type="py"] {
+    display: block !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  /* Besserer Fluss nach dem Plot */
+  #plot + script + h2,
+  #plot ~ h2 {
+    margin-top: 2rem !important;
+    clear: both;
+  }
+  
+  /* Animationen für interaktive Elemente */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  h2:hover {
+    animation: pulse 1s ease-in-out;
+  }
+  
+  /* PyScript generierte Container optimieren */
+  .py-terminal-box, 
+  .py-terminal {
+    display: none !important;
+  }
+  
+  /* Falls PyScript Debug-Ausgaben anzeigt */
+  #pyconfig {
+    display: none !important;
+
+/* Footer Styling */
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px var(--shadow-color);
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.attribution {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.heart {
+  color: var(--accent-color);
+  font-size: 1.2em;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  60% { transform: scale(1); }
+}
+
+/* Für responsive Darstellung */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+}

@@ -1,0 +1,5 @@
+name = "ColorOfHeat"
+
+# Install packages to be used in this project
+# packages = ["pandas"]
+packages = ["matplotlib", "micropip", "numpy"]

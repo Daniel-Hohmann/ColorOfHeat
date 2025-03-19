@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Gentle Hat</title>
+
+    <!-- Recommended meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- PyScript CSS -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.1/core.css">
+    <!-- This script tag bootstraps PyScript -->
+    <script type="module" src="https://pyscript.net/releases/2025.2.1/core.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Warum heiße Dinge leuchten - Das Spektrum der
+        Schwarzkörperstrahlung</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body);"></script>
+
+</head>
+<body>
+    <h1>Warum heiße Dinge leuchten - Das Spektrum der
+        Schwarzkörperstrahlung</h1>
+    <ul>
+        <li><a href="#k1">Kapitel 1: Einleitung</a></li>
+        <li><a href="#k2">Kapitel 2: Warum leuchten heiße Objekte ?</a></li>
+        <li><a href="#k3">Kapitel 3: Wiensches Verschiebungsgesetz</a></li>
+        <li><a href="#k4">Kapitel 4: Plancksches Strahlungsgesetz</a></li>
+        <li><a href="#k5">Kapitel 5: Erleuterung des Graphen</a></li>
+        <li><a href="#k6">Kapitel 6: Warum ist das wichtig?</a></li>
+        <li><a href="#k7">Kapitel 7: Fazit!</a></li>
+    </ul>
+    <h2 id="#k1">Einleitung</h2>
+    <p>Hast du dich jemals gefragt, warum glühendes Metall rot leuchtet oder warum die Sonne gelb erscheint? Die Antwort darauf liegt in der sogenannten <b>Schwarzkörperstrahlung</b>, einem fundamentalen physikalischen Konzept, das beschreibt, wie Objekte aufgrund ihrer Temperatur Licht abstrahlen. Dieses Prinzip ist nicht nur entscheidend für das Verständnis der Farben von heißen Gegenständen, sondern auch für zahlreiche Anwendungen in der Astronomie, Physik und Technik.
+
+        In diesem Beitrag erfährst du, warum sich die Farbe eines Objekts mit der Temperatur ändert, welche physikalischen Gesetze dahinterstecken und wie wir das mit einem einfachen Diagramm visualisieren können.
+    </p>
+    <h2 id="#k2">Warum leuchten heiße Objekte ?</h2>
+    <p>Jedes Objekt mit einer Temperatur über dem absoluten Nullpunkt sendet elektromagnetische Strahlung aus. Je heißer es wird, desto mehr Energie wird abgegeben, und die dominante Wellenlänge dieser Strahlung verschiebt sich zu kürzeren, energiereicheren Bereichen des Spektrums. Deshalb erscheint ein heißes Stück Metall zuerst rot, dann gelb und schließlich weiß oder blau, wenn es noch heißer wird.
+
+    </p>
+    <h2 id="#k3">Wiensches Verschiebungsgesetz</h2>
+    <p>
+        Das <b>Wiensche Verschiebungsgesetz</b> gibt die Wellenlänge an, bei der die Intensität der Strahlung eines Schwarzkörpers maximal ist:
+        <div>
+            $$ \lambda_{\text{max}} = \frac{b}{T} $$
+        </div>
+        Dabei ist:
+        <ul>
+            <li>$$ \lambda_{\text{max}} $$ ist die Wellenlänge der maximalen Emission (in Metern),</li>
+            <li>$$ b = 2.89777 \times 10^{-3} \ \text{m.K} $$ ist die Wiensche Verschiebungskonstante,</li>
+            <li>$$ T $$ ist die Temperatur des Körpers in Kelvin.</li>
+        </ul>
+        Je höher die Temperatur, desto kleiner ist die Wellenlänge der maximalen Emission. Das bedeutet, heiße Objekte strahlen eher im blauen Bereich des sichtbaren Spektrums, während kühlere Objekte eher im roten Bereich strahlen.
+    </p>
+    <h2 id="#k4">Erleuterung des Graphen</h2>
+    <p>Das Plancksche Strahlungsgesetz beschreibt die spektrale Energiedichte \( I(\lambda, T) \) eines Schwarzkörpers als Funktion der Wellenlänge und Temperatur:</p>
+    
+    <div>
+        $$ I(\lambda, T) = \frac{2hc^2}{\lambda^5} \cdot \frac{1}{e^{\frac{hc}{\lambda k_B T}} - 1} $$
+    </div>
+    
+    <p>Dabei sind:</p>
+    <ul>
+        <li>$$ h = 6.626 \times 10^{-34} \ \text{J.s} $$ das Plancksche Wirkungsquantum,</li>
+        <li>$$ c = 3.0 \times 10^8 \ \text{m/s} $$ die Lichtgeschwindigkeit im Vakuum,</li>
+        <li>$$ k_B = 1.381 \times 10^{-23} \ \text{J/K} $$ die Boltzmann-Konstante,</li>
+        <li>$$ \lambda $$ die Wellenlänge (in Metern),</li>
+        <li>$$ T $$ die Temperatur des Körpers (in Kelvin).</li>
+    </ul>
+
+    <p>Dieses Gesetz beschreibt die Intensität der abgestrahlten Energie in Abhängigkeit von der Wellenlänge.</p>
+
+    <h2 id="#k5">Erleuterung des Graphen</h2>
+    <p>Der Graph(Unten Figure 1) zeigt die Beziehung zwischen Wellenlänge (x-Achse) und Frequenz (y-Achse). Zusätzlich wird durch einen roten Punkt die Wellenlänge der maximalen Emission markiert, die sich gemäß dem Wienschen Verschiebungsgesetz verändert:</p>
+    
+    <ul>
+        <li>Bei $$ T = 3000 \, \text{K} $$ liegt die Emission im roten Bereich.</li>
+        <li>Bei höheren Temperaturen (z. B. $$ T = 6000 \, \text{K} $$, wie bei der Sonne) verschiebt sich das Maximum ins sichtbare Licht (weiß-gelblich).</li>
+        <li>Bei noch höheren Temperaturen liegt die maximale Emission im UV-Bereich.</li>
+    </ul>
+
+    <div id="plot"></div>
+    <script type="py" src="./colorofheat.py" config="./pyscript.toml"></script> <!-- fuer erros einfach hinter config terminal schreiben -->
+
+    <h2 id="#k6">Warum ist das wichtig?</h2>
+    <p>Das Verständnis der Schwarzkörperstrahlung hat weitreichende Anwendungen:</p>
+    <ul>
+        <li><strong>Astronomie:</strong> Die Farbe eines Sterns gibt Aufschluss über seine Temperatur.</li>
+        <li><strong>Klimatechnik:</strong> Infrarotstrahlung wird zur Wärmebildtechnik genutzt.</li>
+        <li><strong>Beleuchtung:</strong> Die Farbtemperatur von Glühbirnen basiert auf diesen Prinzipien.</li>
+    </ul>
+</body>
+</html>
